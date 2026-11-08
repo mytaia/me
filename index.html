@@ -3,51 +3,343 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111310">
-  <meta name="description" content="一个关于技术、创造与日常的个人主页。">
-  <title>你好，我是 Tai — 独立思考，持续创造</title>
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="关于技术架构、AI实践与能源数字化的个人主页。">
+  <title>技术实践者 · 架构、AI 与能源数字化</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap');
-    :root{--bg:#111310;--panel:#191b17;--ink:#f2f0e9;--muted:#a6a69b;--line:#35372f;--acid:#c8f169;--orange:#ff805d;--mono:'DM Mono',monospace;--sans:'Manrope','Noto Sans SC',sans-serif;--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 56px));margin:auto}.mono{font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-    header{height:76px;position:sticky;top:0;z-index:5;background:#111310e8;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:20px;letter-spacing:-.07em}.brand span{color:var(--acid)}nav{display:flex;align-items:center;gap:34px;font-size:13px;color:#d2d1c9}nav a:hover{color:var(--acid)}.nav-cta{padding:10px 16px;border:1px solid var(--line);border-radius:4px}
-    .hero{min-height:680px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px;padding:84px 0 104px;position:relative}.hero:after{content:'✳';position:absolute;right:4%;top:15%;font-size:30px;color:var(--acid);animation:spin 22s linear infinite}.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:25px}.dot{width:8px;height:8px;background:var(--acid);border-radius:50%;box-shadow:0 0 18px #c8f16988}.hero h1{font-size:clamp(54px,8.4vw,104px);line-height:.99;letter-spacing:-.085em;margin:0;font-weight:800}.hero h1 em{font-style:normal;color:var(--acid)}.hero-copy{font-size:16px;color:#b7b7ad;max-width:490px;margin:30px 0 34px}.actions{display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:20px;padding:14px 18px;border-radius:4px;background:var(--acid);color:#16190f;font-size:13px;font-weight:700;transition:transform .2s,background .2s}.button:hover{transform:translateY(-3px);background:#d8ff87}.button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.button.ghost:hover{border-color:var(--acid);color:var(--acid)}.hero-art{height:440px;position:relative;display:grid;place-items:center}.orbit{width:min(100%,400px);aspect-ratio:1;border:1px solid #41443a;border-radius:50%;position:relative;display:grid;place-items:center}.orbit:before,.orbit:after{content:'';position:absolute;border:1px solid #34372e;border-radius:50%}.orbit:before{inset:12%}.orbit:after{inset:25%}.core{height:148px;width:148px;border-radius:50%;display:grid;place-items:center;background:var(--acid);color:#16190f;font-size:66px;font-weight:900;letter-spacing:-.1em;transform:rotate(-9deg);box-shadow:0 0 90px #c8f16925}.orbit-label{position:absolute;background:var(--bg);padding:5px 10px}.orbit-label.one{top:14%;left:12%}.orbit-label.two{right:1%;bottom:29%}.orbit-label.three{bottom:8%;left:26%}.spark{position:absolute;color:var(--orange);font-size:24px}.spark.s1{top:20%;right:15%}.spark.s2{left:11%;bottom:24%;color:var(--acid)}
-    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;color:var(--muted)}.ticker-inner{display:flex;justify-content:space-between;gap:25px;white-space:nowrap}.ticker b{font-weight:500;color:var(--acid);padding-right:7px}
-    section{padding:112px 0}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:42px}.section-title{font-size:clamp(36px,5vw,58px);letter-spacing:-.07em;line-height:1.1;margin:9px 0 0}.section-intro{max-width:360px;color:var(--muted);font-size:14px}.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project{min-height:350px;background:var(--panel);border:1px solid #ffffff0b;border-radius:6px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;transition:border .2s,transform .2s}.project:hover{border-color:#c8f16970;transform:translateY(-4px)}.project:nth-child(1),.project:nth-child(4){min-height:410px}.project-top{display:flex;justify-content:space-between;position:relative;z-index:1}.tag{border:1px solid #ffffff25;padding:5px 9px;border-radius:2px;font:10px var(--mono);color:#c1c1b7}.project-art{position:absolute;inset:26% 7% 24%;display:grid;place-items:center;opacity:.94}.visual-dashboard{width:80%;height:100%;border:1px solid #a2a19450;background:#22251fe8;transform:rotate(-5deg);padding:15px;box-shadow:16px 16px 0 #0e0f0c}.visual-dashboard .bar{height:9px;background:#45483e;width:42%;margin-bottom:15px}.visual-dashboard .graph{height:72%;border-left:1px solid #55584a;border-bottom:1px solid #55584a;background:linear-gradient(155deg,transparent 47%,#c8f169 48%,#c8f169 50%,transparent 51%),linear-gradient(transparent 24%,#ffffff0d 25%,transparent 26%,transparent 49%,#ffffff0d 50%,transparent 51%,transparent 74%,#ffffff0d 75%,transparent 76%)}.visual-orbit{width:205px;height:205px;border:1px solid #ff805d;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 23px #ff805d08,inset 0 0 0 54px #ff805d12}.visual-orbit:after{content:'∞';font-size:85px;color:var(--orange);transform:rotate(-20deg)}.visual-type{font-size:96px;font-weight:900;letter-spacing:-.12em;color:var(--acid);text-shadow:7px 7px 0 #c8f16926;transform:rotate(-8deg)}.visual-cards{display:flex;gap:10px;transform:rotate(5deg)}.visual-cards i{display:block;width:84px;height:115px;border:1px solid #c8f1697a;background:linear-gradient(145deg,#c8f16920,#191b17);border-radius:50px 50px 7px 7px}.visual-cards i:nth-child(2){transform:translateY(-25px);border-color:#ff805d}.project-info{position:relative;z-index:1;margin-top:auto}.project-info h3{font-size:22px;margin:0 0 6px;letter-spacing:-.04em}.project-info p{font-size:13px;color:#a6a69b;margin:0;max-width:390px}.arrow{color:var(--acid);font-size:22px}
-    .about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#151713}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.about-stamp{border:1px solid var(--line);aspect-ratio:1;max-width:300px;display:grid;place-items:center;position:relative}.about-stamp:before{content:'';position:absolute;inset:13%;border:1px dashed #727467;border-radius:50%}.stamp-inner{text-align:center;transform:rotate(-8deg)}.stamp-inner strong{display:block;font-size:70px;letter-spacing:-.1em;color:var(--acid);line-height:1}.stamp-inner span{font:11px var(--mono);letter-spacing:.15em}.about-text{font-size:19px;color:#c7c6bd;line-height:1.9}.about-text strong{color:var(--ink);font-weight:600}.skills{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}.skills span{font:11px var(--mono);border:1px solid var(--line);border-radius:99px;padding:8px 12px;color:#c1c1b7}
-    .contact{padding:120px 0 100px}.contact-card{border:1px solid var(--line);padding:clamp(30px,7vw,78px);position:relative;overflow:hidden}.contact-card:after{content:'↗';position:absolute;right:7%;top:4%;font-size:220px;line-height:1;color:#c8f1690b}.contact h2{font-size:clamp(42px,7vw,82px);line-height:1;letter-spacing:-.08em;margin:17px 0 24px;max-width:700px}.contact h2 span{color:var(--acid)}.contact p{color:var(--muted);max-width:450px;margin-bottom:30px}.contact-links{display:flex;gap:23px;align-items:center;flex-wrap:wrap;margin-top:28px;font-size:13px}.contact-links a:not(.button){border-bottom:1px solid #55574e;padding-bottom:3px;color:#ccc}.contact-links a:not(.button):hover{color:var(--acid);border-color:var(--acid)}footer{padding:22px 0 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font:11px var(--mono)}
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}@keyframes spin{to{transform:rotate(360deg)}}
-    @media(max-width:760px){.wrap{width:min(100% - 36px,var(--max))}header{height:64px}nav{gap:15px;font-size:12px}nav a:nth-child(2),nav a:nth-child(3){display:none}.hero{grid-template-columns:1fr;gap:8px;padding:74px 0 62px;min-height:auto}.hero-art{height:310px}.orbit{width:290px}.core{width:105px;height:105px;font-size:48px}.hero:after{right:9%;top:8%}.ticker-inner{justify-content:flex-start;animation:scroll 22s linear infinite}.section-head{display:block}.section-intro{margin-top:18px}.projects{grid-template-columns:1fr}.project,.project:nth-child(1),.project:nth-child(4){min-height:360px}.about-grid{grid-template-columns:1fr;gap:42px}.about-stamp{max-width:220px}.stamp-inner strong{font-size:52px}section{padding:78px 0}.contact{padding:78px 0}.contact-card:after{font-size:130px;top:2%}footer{gap:15px;font-size:9px}}@keyframes scroll{to{transform:translateX(-24%)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-    :root{--bg:#f7f5ed;--panel:#fffdf8;--ink:#1d342c;--muted:#52645a;--line:#c5d0c3;--acid:#79a96e;--orange:#c75f45}
-    body{background:var(--bg);color:var(--ink)}header{background:#f7f5edef;border-color:#1d342c26}nav{color:#344b40}.hero h1 em,.contact h2 span{color:#527d4b}.hero-copy{color:#52645a}.dot{box-shadow:0 0 18px #79a96e88}.button{color:#172c23}.button:hover{background:#a5ce98}.button.ghost:hover{color:#456e40}.orbit{border-color:#9eaf9d}.orbit:before,.orbit:after{border-color:#b8c5b5}.core{color:#172c23;box-shadow:0 0 90px #79a96e35}.ticker{background:#e9ecdf}.ticker b{color:#527d4b}
-    .project{border-color:#c5d0c3;box-shadow:0 8px 28px #374b3518}.project:hover{border-color:#79a96e}.tag{border-color:#c5d0c3;color:#52645a}.visual-dashboard{border-color:#758b73;background:#f3f5eb;box-shadow:16px 16px 0 #d0dacb}.visual-dashboard .bar{background:#c0ceb9}.visual-dashboard .graph{border-color:#879984;background:linear-gradient(155deg,transparent 47%,#79a96e 48%,#79a96e 50%,transparent 51%),linear-gradient(transparent 24%,#263c3618 25%,transparent 26%,transparent 49%,#263c3618 50%,transparent 51%,transparent 74%,#263c3618 75%,transparent 76%)}.visual-orbit{border-color:#c75f45}.visual-type{color:#527d4b;text-shadow:7px 7px 0 #79a96e35}.visual-cards i{border-color:#79a96e;background:linear-gradient(145deg,#79a96e35,#f6f4ec)}.visual-cards i:nth-child(2){border-color:#c75f45}.project-info p{color:#52645a}.arrow{color:#527d4b}
-    .about{background:#e9ecdf}.about-stamp{background:#f8f7f0}.about-stamp:before{border-color:#8da18a}.stamp-inner strong{color:#527d4b}.about-text{color:#40574b}.skills span{border-color:#aebdaa;color:#40574b}.contact-card{background:#fffdf8;box-shadow:0 12px 40px #374b3514}.contact-card:after{color:#79a96e26}.contact-links a:not(.button){border-color:#aebdaa;color:#40574b}.contact-links a:not(.button):hover{color:#527d4b;border-color:#527d4b}
+    :root {
+      --bg: #f7f8f5;
+      --paper: #ffffff;
+      --ink: #17251f;
+      --muted: #66736d;
+      --line: #e5eae5;
+      --green: #28745e;
+      --green-dark: #1d5948;
+      --mint: #e8f2ec;
+      --blue: #476b8a;
+      --sand: #f1eee5;
+      --shadow: 0 18px 50px rgba(25, 49, 38, .07);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background:
+        radial-gradient(circle at 88% 5%, rgba(220,235,224,.55), transparent 24rem),
+        var(--bg);
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    .topbar {
+      height: 78px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(220,228,221,.8);
+    }
+    .brand { display: flex; gap: 11px; align-items: center; font-weight: 750; letter-spacing: -.03em; }
+    .mark {
+      width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
+      color: white; background: var(--green); font-size: 17px; font-weight: 800;
+      box-shadow: 0 5px 14px rgba(40,116,94,.2);
+    }
+    nav { display: flex; gap: 29px; align-items: center; color: var(--muted); font-size: 14px; }
+    nav a:hover { color: var(--green); }
+    .nav-cta { padding: 9px 16px; border: 1px solid #cbd9cf; border-radius: 999px; color: var(--green-dark); }
+    .menu { display: none; border: 1px solid var(--line); background: white; border-radius: 10px; padding: 8px 11px; }
+    .hero { padding: 92px 0 78px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 54px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 25px; height: 1px; background: var(--green); }
+    h1 { margin: 22px 0 20px; max-width: 720px; font-size: clamp(40px, 5.3vw, 66px); line-height: 1.16; letter-spacing: -.055em; font-weight: 780; }
+    h1 em { color: var(--green); font-style: normal; }
+    .intro { max-width: 650px; color: #59675f; font-size: 17px; line-height: 1.9; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: 999px; font-size: 14px; font-weight: 700; transition: .2s; }
+    .btn-primary { background: var(--green); color: white; box-shadow: 0 8px 18px rgba(40,116,94,.18); }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .btn-plain { border: 1px solid var(--line); background: white; color: var(--ink); }
+    .btn-plain:hover { border-color: #b9cfc0; transform: translateY(-2px); }
+    .hero-art { min-height: 350px; position: relative; display: grid; place-items: center; }
+    .orbit {
+      width: min(330px, 78vw); aspect-ratio: 1; border: 1px solid #d7e3d9; border-radius: 50%;
+      position: relative; display: grid; place-items: center;
+      background: radial-gradient(circle, rgba(232,242,236,.8), rgba(247,248,245,.1) 68%);
+    }
+    .orbit:before, .orbit:after { content: ""; position: absolute; border: 1px dashed #c8d9cd; border-radius: 50%; }
+    .orbit:before { inset: 27px; }
+    .orbit:after { inset: 61px; border-style: solid; border-color: #dce7de; }
+    .core {
+      width: 124px; height: 124px; z-index: 1; border-radius: 36px; transform: rotate(-8deg);
+      display: grid; place-items: center; color: white; font-size: 43px;
+      background: linear-gradient(145deg, #39866d, #1d5948); box-shadow: 0 18px 38px rgba(29,89,72,.24);
+    }
+    .orbit-label {
+      position: absolute; z-index: 2; background: white; border: 1px solid var(--line);
+      border-radius: 13px; padding: 9px 13px; font-size: 12px; font-weight: 750; color: #52635a;
+      box-shadow: 0 8px 22px rgba(30,55,40,.06);
+    }
+    .l1 { top: 23px; left: 25px; } .l2 { top: 65px; right: -14px; }
+    .l3 { bottom: 50px; left: -15px; } .l4 { bottom: 14px; right: 35px; }
+    .section { padding: 76px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 29px; }
+    .kicker { color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+    h2 { font-size: clamp(28px, 3vw, 38px); letter-spacing: -.04em; margin: 8px 0 0; line-height: 1.25; }
+    .section-note { max-width: 410px; color: var(--muted); font-size: 14px; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; }
+    .panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .about-lead { background: var(--mint); border-color: #dce9df; }
+    .about-lead p { font-size: 19px; line-height: 1.85; margin: 0; letter-spacing: -.02em; }
+    .about-lead strong { color: var(--green-dark); }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+    .principle { border-top: 1px solid var(--line); padding-top: 13px; }
+    .principle b { display: block; font-size: 14px; margin-bottom: 4px; }
+    .principle span { color: var(--muted); font-size: 13px; }
+    .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .focus-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 23px; min-height: 220px; transition: .2s; }
+    .focus-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #c9dbcf; }
+    .icon { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: var(--mint); color: var(--green); font-size: 20px; margin-bottom: 19px; }
+    .focus-card h3 { margin: 0 0 8px; font-size: 17px; }
+    .focus-card p { color: var(--muted); font-size: 13px; margin: 0; line-height: 1.8; }
+    .work-list { display: grid; gap: 14px; }
+    .work {
+      display: grid; grid-template-columns: 62px 1fr auto; gap: 20px; align-items: start;
+      background: white; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px;
+    }
+    .work-no { font-size: 13px; font-weight: 800; color: #8b9a90; padding-top: 4px; }
+    .work h3 { margin: 0 0 6px; font-size: 17px; }
+    .work p { color: var(--muted); font-size: 13px; margin: 0; max-width: 700px; }
+    .tag { display: inline-block; white-space: nowrap; padding: 6px 10px; border-radius: 999px; background: #f0f4f0; color: #587064; font-size: 11px; font-weight: 700; }
+    .notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .note { padding: 22px; border-radius: 18px; background: var(--sand); min-height: 150px; }
+    .note small { color: #8a806c; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .note h3 { font-size: 16px; margin: 10px 0 6px; }
+    .note p { color: #716d62; font-size: 13px; margin: 0; }
+
+    .photo-intro { color: var(--muted); font-size: 14px; max-width: 650px; margin: -10px 0 24px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(2, 225px) 185px; gap: 14px; }
+    .photo-card { position: relative; overflow: hidden; border-radius: 18px; background: #e9ece8; border: 1px solid var(--line); }
+    .photo-card img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .55s ease; }
+    .photo-card:hover img { transform: scale(1.045); }
+    .photo-card:after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(10,20,16,.48)); pointer-events: none; }
+    .photo-caption { position: absolute; z-index: 1; left: 17px; bottom: 13px; color: white; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-shadow: 0 1px 8px rgba(0,0,0,.22); }
+    .photo-card:nth-child(1) { grid-column: 1 / 4; grid-row: 1 / 3; }
+    .photo-card:nth-child(2) { grid-column: 1 / 5; grid-row: 3; }
+    .photo-card:nth-child(3) { grid-column: 5 / 9; grid-row: 3; }
+    .photo-card:nth-child(4) { grid-column: 9 / 13; grid-row: 3; }
+    .photo-card:nth-child(5) { grid-column: 4 / 7; grid-row: 1 / 3; }
+    .photo-card:nth-child(6) { grid-column: 7 / 10; grid-row: 1 / 3; }
+    .photo-card:nth-child(7) { grid-column: 10 / 13; grid-row: 1 / 3; }
+    .photo-card.portrait img { object-position: center top; }
+    .photo-card.landscape img { object-position: center; }
+    .quote {
+      padding: 46px; border-radius: 26px; color: white;
+      background: linear-gradient(120deg, #1d5948, #315f6a); position: relative; overflow: hidden;
+    }
+    .quote:after { content: "“"; position: absolute; right: 30px; top: -60px; font-family: Georgia,serif; font-size: 240px; color: rgba(255,255,255,.08); }
+    .quote p { position: relative; z-index: 1; max-width: 780px; font-size: clamp(22px, 3vw, 31px); line-height: 1.6; letter-spacing: -.03em; margin: 0; }
+    .quote span { display: block; margin-top: 18px; color: #c6ded2; font-size: 12px; letter-spacing: .12em; }
+    footer { padding: 30px 0 42px; color: #839087; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 22px; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding: 65px 0 45px; gap: 20px; }
+      .hero-art { min-height: 290px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .focus-grid, .notes-grid { grid-template-columns: 1fr 1fr; }
+      .section { padding: 56px 0; }
+      .section-head { display: block; }
+      .section-note { margin-top: 12px; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, 190px) repeat(3, 170px); }
+      .photo-card:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+      .photo-card:nth-child(5) { grid-column: 2; grid-row: 1 / 3; }
+      .photo-card:nth-child(6) { grid-column: 1; grid-row: 3 / 5; }
+      .photo-card:nth-child(7) { grid-column: 2; grid-row: 3 / 5; }
+      .photo-card:nth-child(2) { grid-column: 1 / 3; grid-row: 5; }
+      .photo-card:nth-child(3) { grid-column: 1 / 3; grid-row: 6; }
+      .photo-card:nth-child(4) { grid-column: 1 / 3; grid-row: 7; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .topbar { height: 68px; }
+      nav { display: none; position: absolute; top: 68px; left: 15px; right: 15px; padding: 18px; background: white; border: 1px solid var(--line); border-radius: 15px; box-shadow: var(--shadow); flex-direction: column; align-items: stretch; gap: 13px; z-index: 10; }
+      nav.open { display: flex; }
+      .menu { display: block; }
+      h1 { font-size: 42px; }
+      .intro { font-size: 15px; }
+      .focus-grid, .notes-grid { grid-template-columns: 1fr; }
+      .work { grid-template-columns: 35px 1fr; gap: 12px; padding: 18px; }
+      .work .tag { grid-column: 2; justify-self: start; }
+      .panel { padding: 22px; }
+      .photo-grid { grid-template-rows: repeat(4, 155px) repeat(3, 135px); gap: 10px; }
+    .quote { padding: 30px 24px; }
+      .footer-inner { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
-  <header><div class="wrap nav"><a class="brand" href="#home">TAI<span>.</span></a><nav aria-label="主导航"><a href="#work">作品</a><a href="#about">关于</a><a href="#contact">联系</a><a class="nav-cta" href="#contact">聊一聊 ↗</a></nav></div></header>
-  <main id="home">
-    <section class="wrap hero">
-      <div><div class="eyebrow mono"><i class="dot"></i> 你好，欢迎来到我的角落</div><h1>独立思考，<br><em>持续创造。</em></h1><p class="hero-copy">我是 Tai，一名热爱技术与创造的探索者。喜欢把复杂的问题理清楚，再把有趣的想法变成真实的东西。</p><div class="actions"><a class="button" href="#work">看看我在做什么 <span>↓</span></a><a class="button ghost" href="#about">认识一下我 <span>↗</span></a></div></div>
-      <div class="hero-art" aria-label="以创意与技术为核心的轨道插画"><div class="orbit"><div class="core">T.</div><span class="orbit-label one mono">curiosity</span><span class="orbit-label two mono">building</span><span class="orbit-label three mono">ideas</span></div><b class="spark s1">✳</b><b class="spark s2">✦</b></div>
-    </section>
-    <div class="ticker"><div class="wrap ticker-inner"><span><b>✳</b> 技术探索</span><span><b>✳</b> 系统思维</span><span><b>✳</b> 持续学习</span><span><b>✳</b> 把想法做出来</span><span><b>✳</b> 保持好奇</span></div></div>
-    <section class="wrap" id="work"><div class="section-head reveal"><div><span class="mono">01 / selected work</span><h2 class="section-title">最近在折腾的事</h2></div><p class="section-intro">从工程实践到个人实验，记录那些值得动手的想法。这里的内容可以替换成你的真实项目。</p></div>
-      <div class="projects">
-        <a class="project reveal" href="#contact"><div class="project-top"><span class="mono">01 — ENGINEERING</span><span class="tag">系统 · 架构</span></div><div class="project-art"><div class="visual-dashboard"><div class="bar"></div><div class="graph"></div></div></div><div class="project-info"><h3>让复杂系统变清晰 <span class="arrow">↗</span></h3><p>梳理架构、数据与流程，让技术真正服务于人的问题。</p></div></a>
-        <a class="project reveal" href="#contact"><div class="project-top"><span class="mono">02 — EXPERIMENT</span><span class="tag">AI · 自动化</span></div><div class="project-art"><div class="visual-orbit"></div></div><div class="project-info"><h3>探索人机协作的新方式 <span class="arrow">↗</span></h3><p>把 AI 放进实际工作流，做能解决问题的小工具。</p></div></a>
-        <a class="project reveal" href="#contact"><div class="project-top"><span class="mono">03 — NOTES</span><span class="tag">知识 · 写作</span></div><div class="project-art"><div class="visual-type">Aa.</div></div><div class="project-info"><h3>把输入变成自己的理解 <span class="arrow">↗</span></h3><p>持续整理技术笔记与生活观察，慢慢搭建自己的知识地图。</p></div></a>
-        <a class="project reveal" href="#contact"><div class="project-top"><span class="mono">04 — LIFE</span><span class="tag">生活 · 灵感</span></div><div class="project-art"><div class="visual-cards"><i></i><i></i><i></i></div></div><div class="project-info"><h3>工作之外，也认真生活 <span class="arrow">↗</span></h3><p>阅读、尝试、散步、记录。好奇心不只属于工作。</p></div></a>
+  <header class="wrap topbar">
+    <a class="brand" href="#home"><span class="mark">知</span><span>技术实践者的主页</span></a>
+    <button class="menu" id="menuBtn" aria-label="打开导航">☰</button>
+    <nav id="nav">
+      <a href="#about">关于我</a>
+      <a href="#focus">关注领域</a>
+      <a href="#work">实践项目</a>
+      <a href="#photography">摄影作品</a>
+      <a href="#notes">思考与分享</a>
+      <a class="nav-cta" href="#contact">保持连接 ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Architecture · AI · Energy</div>
+        <h1>让技术落地，<br><em>让想法产生价值。</em></h1>
+        <p class="intro">
+          一名长期站在业务与技术交汇处的实践者。关注企业级架构、工程质量与 AI 应用，
+          也持续探索人工智能如何为能源行业带来真正可衡量的改变。
+          相信好的技术不止于先进，更要可靠、可用、可持续。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">看看我的实践 <span>↗</span></a>
+          <a class="btn btn-plain" href="#about">认识我 <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="架构、数据、智能与实践的抽象图形">
+        <div class="orbit">
+          <span class="orbit-label l1">系统架构</span>
+          <span class="orbit-label l2">AI 应用</span>
+          <span class="orbit-label l3">工程实践</span>
+          <span class="orbit-label l4">能源数字化</span>
+          <div class="core">AI</div>
+        </div>
       </div>
     </section>
-    <section class="about" id="about"><div class="wrap about-grid"><div class="reveal"><span class="mono">02 / a little about me</span><div class="about-stamp"><div class="stamp-inner"><strong>TAI</strong><span>ALWAYS IN PROGRESS</span></div></div></div><div class="reveal"><h2 class="section-title">保持好奇，<br>保持动手。</h2><p class="about-text">我相信<strong>好的创造始于认真观察</strong>。在技术世界里，我喜欢理解系统如何运转；在日常生活里，我喜欢发现值得记录的小事。<br><br>我正在持续学习，也持续做一些小项目。这个页面是我的个人入口，之后会在这里放上更多真实的作品、笔记和近况。</p><div class="skills"><span>TECHNOLOGY</span><span>ARCHITECTURE</span><span>AI & AUTOMATION</span><span>LEARNING</span><span>IDEAS INTO THINGS</span></div></div></div></section>
-    <section class="wrap contact" id="contact"><div class="contact-card reveal"><span class="mono">03 / say hello</span><h2>有好点子？<br><span>我们聊聊。</span></h2><p>欢迎交流技术、项目、阅读和生活里的新发现。找到你常用的联系方式，给我留个消息吧。</p><div class="contact-links"><a class="button" href="mailto:hello@example.com">发一封邮件 <span>↗</span></a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div></section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">01 / ABOUT</div><h2>关于我</h2></div>
+          <p class="section-note">既关注技术深度，也关心团队协作、交付质量和业务结果。</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel about-lead">
+            <p>
+              我的工作横跨<strong>技术研究、架构设计、技术治理与项目支撑</strong>。
+              喜欢把复杂问题拆解清楚，再用工程化的方法推动解决；也乐于把实践沉淀成方法、工具和可复用的知识。
+            </p>
+          </div>
+          <div class="panel principles">
+            <div class="principle"><b>系统性思考</b><span>从架构、数据、流程和组织协同看问题。</span></div>
+            <div class="principle"><b>结果导向</b><span>技术方案最终要经得起真实业务验证。</span></div>
+            <div class="principle"><b>持续学习</b><span>保持对新模型、新工具和新范式的好奇。</span></div>
+            <div class="principle"><b>分享与传承</b><span>把经验变成团队可复用的能力。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">02 / FOCUS</div><h2>持续深耕的领域</h2></div>
+          <p class="section-note">在复杂企业系统中做扎实的工程，在快速变化的 AI 世界里做有价值的探索。</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card"><div class="icon">⌘</div><h3>企业架构与技术治理</h3><p>系统架构、国产化适配、数据库与中间件治理、性能优化、稳定性建设和技术标准。</p></article>
+          <article class="focus-card"><div class="icon">✳</div><h3>AI 与智能应用</h3><p>大模型应用、RAG、文本相似度、智能检索、Agent、AI Coding，以及从原型到工程落地。</p></article>
+          <article class="focus-card"><div class="icon">⌁</div><h3>能源数字化与预测</h3><p>电力交易业务理解，新能源风光功率预测，机器学习特征工程与模型评估。</p></article>
+          <article class="focus-card"><div class="icon">✓</div><h3>质量工程与智能测试</h3><p>Playwright、API 与 Web 联合测试、测试资产沉淀，以及 AI 辅助用例生成和故障分析。</p></article>
+          <article class="focus-card"><div class="icon">▤</div><h3>数据与知识工程</h3><p>全文检索、向量检索、语义召回、重排与融合检索，让知识更容易被找到和复用。</p></article>
+          <article class="focus-card"><div class="icon">↗</div><h3>技术成果产品化</h3><p>把工作中的方法论、工具和经验整理成课程、专栏、培训与可复用产品。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">03 / SELECTED WORK</div><h2>实践项目与探索</h2></div>
+          <p class="section-note">不追逐概念本身，更在意它解决了什么问题、留下了什么能力。</p>
+        </div>
+        <div class="work-list">
+          <article class="work">
+            <div class="work-no">01</div>
+            <div><h3>新能源风光功率预测</h3><p>围绕多场站预测任务开展特征工程、时序验证、样本权重与模型对比，持续探索机器学习在新能源功率预测场景中的应用方法。</p></div>
+            <span class="tag">机器学习 · 能源</span>
+          </article>
+          <article class="work">
+            <div class="work-no">02</div>
+            <div><h3>企业级系统架构与稳定性治理</h3><p>聚焦数据库、中间件、缓存、SQL 性能和高可用设计，通过问题定位、方案评审、技术规范与治理机制提升系统可靠性。</p></div>
+            <span class="tag">架构 · 稳定性</span>
+          </article>
+          <article class="work">
+            <div class="work-no">03</div>
+            <div><h3>从自动化测试走向智能化测试</h3><p>以 TypeScript 与 Playwright 为基础，探索 API / Web 联合测试、测试用例生成、失败分析和持续集成中的 AI 辅助能力。</p></div>
+            <span class="tag">Playwright · AI</span>
+          </article>
+          <article class="work">
+            <div class="work-no">04</div>
+            <div><h3>面向项目文档的语义检索与相似度分析</h3><p>研究全文检索、Embedding、向量召回、重排与结果融合，探索项目任务和文档内容的相似发现与辅助审查。</p></div>
+            <span class="tag">检索 · NLP</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="photography">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">04 / PHOTOGRAPHY</div><h2>镜头里的日常与远方</h2></div>
+          <p class="section-note">工作之外，也喜欢带着相机观察世界。用镜头记录人物、城市、光线与那些稍纵即逝的瞬间。</p>
+        </div>
+        <p class="photo-intro">摄影对我来说，是另一种思考方式：放慢一点，留意细节，也重新发现熟悉事物的不同侧面。</p>
+        <div class="photo-grid">
+          <figure class="photo-card portrait"><img src="portrait-rose.jpg" alt="花朵与人像摄影作品" loading="lazy"><figcaption class="photo-caption">人像 · 花与柔光</figcaption></figure>
+          <figure class="photo-card landscape"><img src="harbor-night.jpg" alt="夜色中的港口与城市灯光" loading="lazy"><figcaption class="photo-caption">城市 · 港湾夜色</figcaption></figure>
+          <figure class="photo-card landscape"><img src="city-sunset.jpg" alt="晚霞映照城市天际线" loading="lazy"><figcaption class="photo-caption">城市 · 日落时分</figcaption></figure>
+          <figure class="photo-card landscape"><img src="city-daylight.jpg" alt="山峦与城市建筑" loading="lazy"><figcaption class="photo-caption">城市 · 山与建筑</figcaption></figure>
+          <figure class="photo-card portrait"><img src="portrait-summer.jpg" alt="自然光下的人像摄影作品" loading="lazy"><figcaption class="photo-caption">人像 · 夏日记忆</figcaption></figure>
+          <figure class="photo-card portrait"><img src="portrait-shadow.jpg" alt="暗调光影人像摄影作品" loading="lazy"><figcaption class="photo-caption">人像 · 光影之间</figcaption></figure>
+          <figure class="photo-card portrait"><img src="portrait-blossom.jpg" alt="繁花背景下的人像摄影作品" loading="lazy"><figcaption class="photo-caption">人像 · 花开时节</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">05 / NOTES</div><h2>思考与分享</h2></div>
+          <p class="section-note">持续记录值得复盘的技术实践，也记录技术背后的判断与取舍。</p>
+        </div>
+        <div class="notes-grid">
+          <article class="note"><small>ENGINEERING</small><h3>复杂系统，先把边界讲清楚</h3><p>架构设计不只是技术选型，更是职责、约束与协作方式的设计。</p></article>
+          <article class="note"><small>AI PRACTICE</small><h3>让 AI 进入真实工作流</h3><p>从一个可验证的小场景开始，关注准确性、成本、风险和人的反馈。</p></article>
+          <article class="note"><small>GROWTH</small><h3>把经验沉淀为可复用资产</h3><p>工具、模板、案例和方法论，都是个人与团队长期积累的复利。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="contact">
+      <div class="quote">
+        <p>技术的价值，不在于用了多新的工具，而在于是否让复杂的事情变得更简单，让重要的事情变得更可靠。</p>
+        <span>KEEP BUILDING · KEEP LEARNING</span>
+      </div>
+    </section>
   </main>
-  <footer class="wrap"><span>© <span id="year"></span> TAI. MADE WITH CURIOSITY.</span><a href="#home">回到顶部 ↑</a></footer>
+
+  <footer class="wrap">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> 技术实践者 · 个人主页</span>
+      <span>用好奇心探索，用工程能力落地。</span>
+    </div>
+  </footer>
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
